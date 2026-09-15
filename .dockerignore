@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+# Unityプロジェクトはコンテナに入れない
+GameOnline/
+.git/
