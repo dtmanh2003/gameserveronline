@@ -1,9 +1,19 @@
 import asyncio
 import json
+import logging
 import os
 from http import HTTPStatus
 
 import websockets
+
+
+class IgnoreHandshakeError(logging.Filter):
+    # RenderのHEADリクエスト(死活監視)による「opening handshake failed」のエラーログを表示しない
+    def filter(self, record):
+        return record.getMessage() != "opening handshake failed"
+
+
+logging.getLogger("websockets.server").addFilter(IgnoreHandshakeError())
 
 players = {}
 clients = {}
