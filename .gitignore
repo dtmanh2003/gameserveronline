@@ -1,0 +1,6 @@
+# Unityプロジェクトはサイズが大きいのでRenderには上げない(サーバーだけ公開する)
+GameOnline/
+__pycache__/
+*.pyc
+.venv/
+venv/
